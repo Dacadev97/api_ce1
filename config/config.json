@@ -1,0 +1,10 @@
+{
+    "development": {
+      "username": "tu_usuario",
+      "password": "tu_contraseña",
+      "database": "peliculas_db",
+      "host": "127.0.0.1",
+      "dialect": "pgsql"
+    }
+  }
+  
