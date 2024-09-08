@@ -3,7 +3,7 @@ const { crearGenero, editarGenero, eliminarGenero, obtenerGeneros } = require('.
 const router = express.Router();
 
 router.get('/', obtenerGeneros);
-router.post('/', crearGenero);
+router.post('/crearGenero', crearGenero);
 router.put('/:id', editarGenero);
 router.delete('/:id', eliminarGenero);
 
