@@ -4,10 +4,9 @@ const port = 3000;
 
 app.use(express.json());
 
-app.get("/", (req, res) => { 
-    res.send("Ximena te amo");
-});
-
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+const generoRoutes = require("./routes/generoRoutes");
+app.use("/generos", generoRoutes);
