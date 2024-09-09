@@ -1,28 +1,39 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
-  class Productora extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
-  }
-  Productora.init({
-    nombre: DataTypes.STRING,
-    estado: DataTypes.BOOLEAN,
-    fecha_creacion: DataTypes.DATE,
-    fecha_actualizacion: DataTypes.DATE,
-    slogan: DataTypes.STRING,
-    descripcion: DataTypes.TEXT
-  }, {
+const { DataTypes } = require("sequelize");
+const sequelize = require("../config/database");
+
+const Productora = sequelize.define(
+  "Productora",
+  {
+    nombre: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    estado: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
+    fecha_creacion: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    fecha_actualizacion: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    slogan: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    descripcion: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  },
+  {
     sequelize,
-    modelName: 'Productora',
-  });
-  return Productora;
-};
+    modelName: "Productora",
+  }
+);
+
+module.exports = Productora;
