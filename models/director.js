@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/database");
 
-const Genero = sequelize.define(
+const Director = sequelize.define(
   "Director",
   {
     nombre: {

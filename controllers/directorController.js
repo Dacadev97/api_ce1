@@ -41,7 +41,7 @@ const eliminarDirector = async (req, res) => {
   }
 };
 
-const obtenerDirectores = async (req, res) => {
+const obtenerDirector = async (req, res) => {
   try {
     const director = await Director.findAll();
     res.json(director);
@@ -54,5 +54,5 @@ module.exports = {
   crearDirector,
   editarDirector,
   eliminarDirector,
-  obtenerDirectores,
+  obtenerDirector,
 };
