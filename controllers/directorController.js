@@ -1,4 +1,4 @@
-const Genero = require("../models/director");
+const Director = require("../models/director");
 
 const crearDirector = async (req, res) => {
   try {

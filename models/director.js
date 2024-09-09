@@ -4,7 +4,7 @@ const sequelize = require("../config/database");
 const Director = sequelize.define(
   "Director",
   {
-    nombre: {
+    nombres: {
       type: DataTypes.STRING,
       allowNull: false,
     },
