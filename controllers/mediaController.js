@@ -1,4 +1,8 @@
 const Media = require("../models/media");
+const Genero = require("../models/genero");
+const Director = require("../models/director");
+const Productora = require("../models/productora");
+const Tipo = require("../models/tipo");
 
 const crearMedia = async (req, res) => {
   try {
@@ -23,7 +27,14 @@ const obtenerMedias = async (req, res) => {
 const obtenerMediaPorId = async (req, res) => {
   try {
     const { id } = req.params;
-    const media = await Media.findByPk(id);
+    const media = await Media.findByPk(id, {
+      include: [
+        { model: Genero, attributes: ["nombre"] },
+        { model: Director, attributes: ["nombres"] },
+        { model: Productora, attributes: ["nombre"] },
+        { model: Tipo, attributes: ["nombre"] },
+      ],
+    });
 
     if (!media) {
       return res.status(404).json({ error: "Media no encontrada" });

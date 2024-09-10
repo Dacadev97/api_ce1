@@ -6,6 +6,11 @@ const Productora = require("./productora");
 const Tipo = require("./tipo");
 
 const Media = sequelize.define("Media", {
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+  },
   serial: {
     type: DataTypes.UUID,
     defaultValue: DataTypes.UUIDV4,
@@ -20,12 +25,12 @@ const Media = sequelize.define("Media", {
     type: DataTypes.TEXT,
     allowNull: false,
   },
-  url: {
+  url_pelicula: {
     type: DataTypes.STRING,
     allowNull: false,
     unique: true,
   },
-  imagen: {
+  imagen_portada: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -43,7 +48,7 @@ const Media = sequelize.define("Media", {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
-  generoId: {
+  genero_id: {
     type: DataTypes.INTEGER,
     references: {
       model: Genero,
@@ -51,7 +56,7 @@ const Media = sequelize.define("Media", {
     },
     allowNull: false,
   },
-  directorId: {
+  director_id: {
     type: DataTypes.INTEGER,
     references: {
       model: Director,
@@ -59,7 +64,7 @@ const Media = sequelize.define("Media", {
     },
     allowNull: false,
   },
-  productoraId: {
+  productora_id: {
     type: DataTypes.INTEGER,
     references: {
       model: Productora,
@@ -67,7 +72,7 @@ const Media = sequelize.define("Media", {
     },
     allowNull: false,
   },
-  tipoId: {
+  tipo_id: {
     type: DataTypes.INTEGER,
     references: {
       model: Tipo,
@@ -77,9 +82,9 @@ const Media = sequelize.define("Media", {
   },
 });
 
-Media.belongsTo(Genero, { foreignKey: "generoId" });
-Media.belongsTo(Director, { foreignKey: "directorId" });
-Media.belongsTo(Productora, { foreignKey: "productoraId" });
-Media.belongsTo(Tipo, { foreignKey: "tipoId" });
+Media.belongsTo(Genero, { foreignKey: "genero_id" });
+Media.belongsTo(Director, { foreignKey: "director_id" });
+Media.belongsTo(Productora, { foreignKey: "productora_id" });
+Media.belongsTo(Tipo, { foreignKey: "tipo_id" });
 
 module.exports = Media;

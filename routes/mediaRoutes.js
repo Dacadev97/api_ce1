@@ -9,10 +9,10 @@ const {
 
 const router = express.Router();
 
-router.post("/media", crearMedia);
-router.get("/media", obtenerMedias);
-router.get("/media/:id", obtenerMediaPorId);
-router.put("/media/:id", actualizarMedia);
-router.delete("/media/:id", eliminarMedia);
+router.post("/", crearMedia);
+router.get("/", obtenerMedias);
+router.get("/:id", obtenerMediaPorId);
+router.put("/:id", actualizarMedia);
+router.delete("/:id", eliminarMedia);
 
 module.exports = router;
