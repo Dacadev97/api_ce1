@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const port = 3000;
 const generoRoutes = require("./routes/generoRoutes");
@@ -7,6 +8,7 @@ const productoraRoutes = require("./routes/productoraRoutes");
 const tipoRoutes = require("./routes/tipoRoutes");
 const mediaRoutes = require("./routes/mediaRoutes");
 
+app.use(cors());
 app.use(express.json());
 
 app.use("/generos", generoRoutes);
