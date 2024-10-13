@@ -1,0 +1,41 @@
+{
+  "development": {
+    "username": "movies_db_w6g1_user",
+    "password": "fUjPYiXVcn9lGg4ZqVkrYrRgEWEQH2w6",
+    "database": "movies_db_w6g1",
+    "host": "dpg-cs64mstumphs73b533jg-a.oregon-postgres.render.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
+  },
+  "test": {
+    "username": "movies_db_w6g1_user",
+    "password": "fUjPYiXVcn9lGg4ZqVkrYrRgEWEQH2w6",
+    "database": "movies_db_w6g1",
+    "host": "dpg-cs64mstumphs73b533jg-a.oregon-postgres.render.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
+  },
+  "production": {
+    "username": "movies_db_w6g1_user",
+    "password": "fUjPYiXVcn9lGg4ZqVkrYrRgEWEQH2w6",
+    "database": "movies_db_w6g1",
+    "host": "dpg-cs64mstumphs73b533jg-a.oregon-postgres.render.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
+  }
+}
