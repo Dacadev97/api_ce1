@@ -1,10 +1,9 @@
 const express = require("express");
 const cors = require("cors");
-const { Sequelize } = require("sequelize");
 const sequelize = require("./config/database");
 const { exec } = require("child_process");
 const app = express();
-let port = 5000; // Puerto inicial
+let port = 5000;
 
 const generoRoutes = require("./routes/generoRoutes");
 const directorRoutes = require("./routes/directorRoutes");
